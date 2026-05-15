@@ -1,0 +1,574 @@
+/* ============================================
+   DARK/LIGHT THEME SYSTEM
+   Modern BotX Theme with Dark/Light Mode Support
+   ============================================ */
+
+:root {
+  /* Light Mode Colors */
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-primary-light: #818cf8;
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  
+  --border-color: #475569;
+  --border-light: #1e293b;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+
+.header_area,
+.header-top-area {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar {
+  background-color: var(--bg-primary);
+}
+
+.navbar-brand img {
+  filter: brightness(0.95);
+}
+
+[data-theme="dark"] .navbar-brand img {
+  filter: brightness(1.1);
+}
+
+.navbar-nav .nav-link,
+.nav-item a {
+  color: var(--text-primary) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-primary) !important;
+}
+
+.navbar-nav .active > .nav-link {
+  color: var(--color-primary) !important;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-area {
+  background-color: var(--bg-primary);
+  background-image: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.hero-content h2,
+.hero-content h3 {
+  color: var(--text-primary);
+}
+
+.hero-content p {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   FEATURE SECTION
+   ============================================ */
+
+.feature-area {
+  background-color: var(--bg-primary);
+}
+
+.section-title h3 {
+  color: var(--text-primary);
+}
+
+.section-title p {
+  color: var(--text-secondary);
+}
+
+.single-feature {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.single-feature:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+}
+
+.feature-icon {
+  background: var(--gradient-1);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.feature-content h4 {
+  color: var(--text-primary);
+}
+
+.feature-content p {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   ACCORDION STYLES
+   ============================================ */
+
+.single-accordion {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.accordion-btn button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: none;
+}
+
+.accordion-btn button:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.accordion-btn button.collapsed {
+  background-color: var(--bg-secondary);
+}
+
+.accordion-content {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 15px;
+}
+
+/* ============================================
+   CARD STYLES
+   ============================================ */
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.card-body {
+  background-color: var(--bg-secondary);
+}
+
+.card-title {
+  color: var(--text-primary);
+}
+
+.card-text {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   TESTIMONIAL SECTION
+   ============================================ */
+
+.testimonial-area {
+  background-color: var(--bg-secondary);
+}
+
+.single-testimonial {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.testimonial-header {
+  margin-bottom: 20px;
+}
+
+.client-details h6 {
+  color: var(--text-primary);
+}
+
+.client-details span {
+  color: var(--text-secondary);
+}
+
+.quote {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.testimonial-content a {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+
+.pricing-area {
+  background-color: var(--bg-primary);
+}
+
+.single-price {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+}
+
+.single-price:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px);
+}
+
+.single-price.active {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+  transform: scale(1.05);
+}
+
+.package-name {
+  color: var(--text-primary);
+}
+
+.package-price {
+  color: var(--color-primary);
+}
+
+.package-details {
+  color: var(--text-secondary);
+}
+
+.package-details li {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.main-btn {
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-hover {
+  position: relative;
+}
+
+.btn-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+.footer-area {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-widget h4 {
+  color: var(--text-primary);
+}
+
+.footer-widget p,
+.footer-widget a {
+  color: var(--text-secondary);
+}
+
+.footer-widget a:hover {
+  color: var(--color-primary);
+}
+
+.footer-copyright {
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ============================================
+   ALERT/MODAL STYLES
+   ============================================ */
+
+.modal-content {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+.modal-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+  color: var(--text-primary);
+}
+
+.modal-body {
+  color: var(--text-primary);
+}
+
+.alert {
+  border: 1px solid var(--border-color);
+}
+
+.alert-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #059669;
+}
+
+[data-theme="dark"] .alert-success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.theme-toggle i {
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover i {
+  transform: rotate(20deg);
+  color: var(--color-primary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .single-feature,
+  .single-price,
+  .single-testimonial {
+    padding: 20px;
+  }
+
+  .feature-area .row {
+    margin: -10px;
+  }
+
+  .feature-area .col-md-6 {
+    padding: 10px;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-muted {
+  color: var(--text-tertiary) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.border {
+  border-color: var(--border-color) !important;
+}
+
+.shadow {
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wow.fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
